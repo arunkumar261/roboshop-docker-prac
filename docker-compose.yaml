@@ -33,5 +33,13 @@ services:
     depends_on:
       - redis
       - mongodb
+  
+  cart:
+    image : cart:1.0.1
+    container_name: cart
+    depends_on:
+      - redis
+      - catalogue
+
 
 
