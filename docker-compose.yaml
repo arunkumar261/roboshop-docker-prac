@@ -14,14 +14,13 @@ services:
     depends_on:
     - mongodb
 
-  # web:
-  #   image : web:1.0.0
-  #   container_name: web
-  #   ports:
-  #     - "80:80"
-  #   depends_on :
-  #   - catalogue
-  #   - user
+  web:
+    image: web:1.0.1
+    container_name: web
+    ports:
+      - "80:80"
+    depends_on:
+    - catalogue
 
   # redis:
   #   image : redis
