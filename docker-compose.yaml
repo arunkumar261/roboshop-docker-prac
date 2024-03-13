@@ -14,11 +14,13 @@ services:
     depends_on:
     - mongodb
 
-  web :
-    image : web:1.0.0
+  web:
+    image: web:1.0.1
     container_name: web
     ports:
       - "80:80"
-    depends_on :
+    depends_on:
     - catalogue
+    # networks:
+    # - roboshop
 
