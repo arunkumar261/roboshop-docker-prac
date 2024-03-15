@@ -1,41 +1,42 @@
 networks:
   default:
     external:
-      name: roboshop
+      name : roboshop
 
 services:
   mongodb:
-    image: mongodb:v1
+    image : mongodb:v1
     container_name: mongodb
 
   catalogue:
-    image: catalogue:v1
+    image : catalogue:v1
     container_name: catalogue
     depends_on:
-      - mongodb
+    - mongodb
+
 
   web:
     image: web:v1
     container_name: web
     ports:
-      - "80:80"
+    - "80:80"
     depends_on:
-      - catalogue
+    - catalogue
 
   redis:
     image: redis
     container_name: redis
-
+  
   user:
     image: user:v1
     container_name: user
     depends_on:
-      - redis
-      - mongodb
+    - redis
+    - mongodb
 
   cart:
     image: cart:v1
     container_name: cart
     depends_on:
-      - redis
-      - catalogue
+    - redis
+    - catalogue  
