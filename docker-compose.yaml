@@ -5,18 +5,18 @@ networks:
 
 services:
   mongodb:
-    image : mongodb:1.0.0
+    image : mongodb:v1
     container_name: mongodb
 
   catalogue:
-    image : catalogue:1.0.0
+    image : catalogue:v1
     container_name: catalogue
     depends_on:
     - mongodb
 
 
   web:
-    image: web:1.0.0
+    image: web:v1
     container_name: web
     ports:
     - "80:80"
@@ -26,11 +26,9 @@ services:
   redis:
     image: redis
     container_name: redis
-    networks:
-      - roboshop
   
   user:
-    image: user:1.0.0
+    image: user:v1
     container_name: user
     depends_on:
     - redis
