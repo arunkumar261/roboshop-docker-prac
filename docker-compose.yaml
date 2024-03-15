@@ -26,6 +26,8 @@ services:
   redis:
     image: redis
     container_name: redis
+    networks:
+      - roboshop
   
   user:
     image: user:1.0.0
